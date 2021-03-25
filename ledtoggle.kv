@@ -1,0 +1,45 @@
+#:kivy 2.0.0
+
+<GridLayout>:
+    cols: 2
+    
+    RelativeLayout:
+        ToggleButton:
+            id: "red"
+            group: 'myButtons'
+            size_hint: None, None
+            size: 0.25 * root.width, 0.25 * root.height
+            pos: 0.075 * root.width, 0.6 * root.height
+            text: "Toggle red LED"
+            color: 1,0,0
+            on_press: root.setLEDs(36, 38, 40)
+            
+        ToggleButton:
+            id: "green"
+            group: 'myButtons'
+            size_hint: None, None
+            size: 0.25 * root.width, 0.25 * root.height
+            pos: 0.375 * root.width, 0.6 * root.height
+            text: "Toggle green LED"
+            color: 0,1,0
+            on_press: root.setLEDs(38, 36, 40)
+            
+        ToggleButton:
+            id: "blue"
+            group: 'myButtons'
+            size_hint: None, None
+            size: 0.25 * root.width, 0.25 * root.height
+            pos: 0.675 * root.width, 0.6 * root.height
+            text: "Toggle blue LED"
+            color: 0,0,1
+            on_press: root.setLEDs(40, 36, 38)
+            
+        ToggleButton:
+            group: 'myButtons'
+            id: "Exit"
+            size_hint: None, None
+            size: 0.25 * root.width, 0.25 * root.height
+            pos: 0.375 * root.width, 0.150 * root.height
+            text: "Exit App"
+            color: 1,1,1
+            on_press: root.Exit()
